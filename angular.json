@@ -25,12 +25,22 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              { "glob": "**/*", "input": "node_modules/ng2-pdfjs-viewer/pdfjs", "output": "/assets/pdfjs" }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/font-awesome/css/font-awesome.css",
+              "./node_modules/materialize-css/dist/css/materialize.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/materialize-css/dist/js/materialize.js",
+              "./node_modules/pdfjs-dist/build/pdf.min.js",
+              "./node_modules/p5/lib/p5.min.js",   
+              "./node_modules/p5/lib/addons/p5.sound.js",   
+              "./node_modules/p5/lib/addons/p5.dom.js" 
+            ]
           },
           "configurations": {
             "production": {
