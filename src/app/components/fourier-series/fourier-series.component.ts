@@ -11,11 +11,14 @@ import * as p5 from "p5";
 export class FourierSeriesComponent implements OnInit {
   private p5;
   timer: any;
+  slider:any;
   constructor() { }
 
   ngOnInit() {
     this.createCanvas();
     this.timer = 0;
+
+    
   }
 
   private createCanvas() {
@@ -25,11 +28,14 @@ export class FourierSeriesComponent implements OnInit {
     p.setup = () => {
       // p.background(0)
       p.createCanvas(1800, 600);
+      // this.slider = document.getElementById("myRange")
+      // console.log(this.slider.value,"Range slider");
 
 
     };
   let timer = 0;
   let wave = [];
+
 
     p.draw = () => {
       p.background(0);
@@ -37,11 +43,14 @@ export class FourierSeriesComponent implements OnInit {
  
       let x =0;
       let y = 0;
+      let slider = document.getElementById("myRange")
+      console.log(slider.value);
+      p.text(slider.value)
 
-        for(let i=0;i<100;i++){
+        for(let i=0;i<slider.value;i++){
          let prevX =x;
          let prevY = y;
-
+        
           let n = i*2 +1;
           let radius = 10 * (4/ n* p.PI);
             x += radius * p.cos(n*timer);
